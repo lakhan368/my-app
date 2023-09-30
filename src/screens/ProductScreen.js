@@ -6,7 +6,7 @@ import products from '../products'
 import { prettyDOM } from '@testing-library/react'
 
 function ProductScreen() {
-    let { id } = useParams() // *****
+    let { id } = useParams() // ***
  
     const product = products.find((p) => p._id == id)
     return (
