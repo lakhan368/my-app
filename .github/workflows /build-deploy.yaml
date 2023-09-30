@@ -20,7 +20,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 14
+        node-version: 13.x
     
     - name: Install NPM packages
       run: npm ci
@@ -28,7 +28,8 @@ jobs:
     - name: Build project
       run: npm run build
     
-
+    - name: Run tests
+      run: npm run test
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
@@ -43,7 +44,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     
     steps:
-    - name: Download artifacts
+    - name: Download artifact
       uses: actions/download-artifact@v2
       with:
         name: production-files
