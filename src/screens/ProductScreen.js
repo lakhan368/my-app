@@ -6,7 +6,7 @@ import products from '../products'
 function ProductScreen() {
     let { id } = useParams() // ***
  
-    const product = products.find((p) => p._id == id)
+    const product = products.find((p) => p._id === id)
     return (
     <div>
         <Link to="/" className='btn btn-light my-3'> Go..Back</Link>    
